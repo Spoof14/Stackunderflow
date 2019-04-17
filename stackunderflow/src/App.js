@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Login from './components/login/Login';
-import Header from './components/header/Header';
 import './App.css'
-import List from './components/utility/List';
-import PostListItem from './components/post/PostListItem';
-import Api from './components/utility/Api';
+
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import Home from './Home';
+import Post from './components/post/Post';
 
 class App extends Component {
 	API_URL = process.env.REACT_APP_API_URL;
@@ -15,31 +15,16 @@ class App extends Component {
 			username: '',
 			password: '',
 			loggedIn: true,
-			items:[]
 		};
 
-		this.Api = new Api(this);
-
 		this.onChange = this.onChange.bind(this);
-		this.getData = this.getData.bind(this);
 		this.login = this.login.bind(this);
 	}
-	componentDidMount(){
-		this.getData();
-	}
 
-	async getData() {
-		try {
-			let items = await this.Api.getPosts();
-			console.log(items)
-			this.setState({
-				items
-			})
-		} catch (error) {
-			console.error("Error when fetching: ", error);
-		}
+	login(e) {
+		e.preventDefault();
+		this.setState({ loggedIn: true })
 	}
-
 	onChange(e) {
 		let { name, value } = e.target;
 		this.setState({
@@ -47,20 +32,16 @@ class App extends Component {
 		})
 	}
 
-	login(e) {
-		e.preventDefault();
-		this.setState({ loggedIn: true })
-	}
-
 	render() {
 		let { loggedIn, username, password } = this.state;
 		if (loggedIn) {
-			let { items } = this.state;
+
 			return (
-				<div className="container">
-					<Header></Header>
-					<List Component={PostListItem} items={items} listName="post-list"></List>
-				</div>
+				<Router>
+					<Route exact path='/' component={Home} />
+					<Route path='/questions/:id' component={Post} />
+				</Router>
+
 			)
 		}
 		return (

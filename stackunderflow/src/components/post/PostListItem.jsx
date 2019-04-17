@@ -4,9 +4,10 @@ import TagListItem from './TagListItem';
 
 export default class PostListItem extends PureComponent {
     render() {
-        let { votes, answers, views, title, tags, user } = this.props.item
+        let { _id, votes, answers, views, title, tags, user } = this.props.item
+        let { location, history } = this.props
         return (
-            <div className="post-list-item">
+            <div className="post-list-item" onClick={() => history.push(`/questions/${_id}`)}>
 
                 <div className="post-list-item-box">
                     <span>{votes}</span>
