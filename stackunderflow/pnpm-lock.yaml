@@ -1,4 +1,5 @@
 dependencies:
+  eslint-plugin-react: 7.12.4
   react: 16.8.6
   react-dom: 16.8.6
   react-router-dom: 5.0.0
@@ -4007,6 +4008,22 @@ packages:
       eslint: ^3 || ^4 || ^5
     resolution:
       integrity: sha512-7gSSmwb3A+fQwtw0arguwMdOdzmKUgnUcbSNlo+GjKLAQFuC2EZxWqG9XHRI8VscBJD5a8raz3RuxQNFW+XJbw==
+  /eslint-plugin-react/7.12.4:
+    dependencies:
+      array-includes: 3.0.3
+      doctrine: 2.1.0
+      has: 1.0.3
+      jsx-ast-utils: 2.0.1
+      object.fromentries: 2.0.0
+      prop-types: 15.7.2
+      resolve: 1.10.0
+    dev: false
+    engines:
+      node: '>=4'
+    peerDependencies:
+      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0
+    resolution:
+      integrity: sha512-1puHJkXJY+oS1t467MjbqjvX53uQ05HXwjqDgdbGBqf5j9eeydI54G3KwiJmWciQ0HTBacIKw2jgwSBSH3yfgQ==
   /eslint-plugin-react/7.12.4_eslint@5.12.0:
     dependencies:
       array-includes: 3.0.3
@@ -10949,6 +10966,7 @@ packages:
     resolution:
       integrity: sha512-e7SkEx6N6SIZ5c5H22RTZae61qtn3PYUE8JYbBFlK9sYmh3DMQ6E5ygtaG/2BW0JZi4WGgTR2IV5ChqlqrDGVQ==
 specifiers:
+  eslint-plugin-react: ^7.12.4
   react: ^16.8.6
   react-dom: ^16.8.6
   react-router-dom: ^5.0.0

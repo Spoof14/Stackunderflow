@@ -11,6 +11,11 @@ class Api{
 
     async getPostById(id){
         let res = await fetch(`${this.baseUrl}/post/${id}`)
+        return await res.json();
+    }
+
+    async newPost(title, user, question){
+        
     }
 }
 
