@@ -76,6 +76,7 @@ export default class Post extends PureComponent {
 		}
 		return (
 			<div className="container">
+			{console.log('Hvorfor builder du ikke?')}
 				<Header></Header>
 				<PostComment item={this.state.post} onClick={(value) => this.onClick(value)}></PostComment>
 
